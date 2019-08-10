@@ -14,7 +14,7 @@ class EventoController extends Controller
      */
     public function index()
     {
-
+        return view('administrador.eventos.index');
     }
 
     /**
@@ -81,5 +81,24 @@ class EventoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function shows(){
+        $dias = Evento::where('id', '!=', '0')->groupBy('fecha_inicio')->orderBy('fecha_inicio', 'ASC')->get(['fecha_inicio'])->toArray();
+        $eventos = Evento::all()->toArray();
+
+        $data = [];
+
+        foreach ($dias as $dia){
+            $var = ['fecha' => date("M. j Y", strtotime($dia['fecha_inicio'])), 'dias' => []];
+            foreach ($eventos as $e){
+                if($e['fecha_inicio'] == $dia['fecha_inicio']){
+                    array_push($var['dias'], $e);
+                }
+            }
+            array_push($data, $var);
+        }
+
+        return response()->json($data);
     }
 }

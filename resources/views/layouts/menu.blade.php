@@ -48,6 +48,18 @@
             </li>
 
             <li class="active treeview">
+                <a href="">
+                    <i class="fa fa-th"></i> <span>Eventos</span>
+                    <span class="pull-right-container">
+                      <small class="label pull-right bg-green">new</small>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ route('eventos.index') }}"><i class="fa fa-circle-o"></i>Listado de eventos</a></li>
+                </ul>
+            </li>
+
+            <li class="active treeview">
                 <a href="#">
                     <i class="fa fa-th"></i> <span>Tee-Time</span>
                     <span class="pull-right-container">
