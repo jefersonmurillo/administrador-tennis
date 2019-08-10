@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -34,6 +35,23 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        /*$this->middleware('guest')->except('logout');*/
+    }
+
+    public function login()
+    {
+        $credentials = $this->validate(request(), [
+            'email' => 'email|required|string',
+            'password' => 'required|string'
+
+        ]);
+
+        if (Auth::guard('web')->attempt($credentials))
+        {
+            return redirect()->route('home');
+        }
+        return back()
+            ->withErrors(['email' => 'Estas credenciales no son validas'])
+            ->withInput(request(['email']));
     }
 }
