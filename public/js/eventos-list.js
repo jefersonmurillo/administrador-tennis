@@ -47,7 +47,7 @@ function cargarEventos() {
                         '                    jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle\n' +
                         '                    quora plaxo ideeli hulu weebly balihoo...\n' +
                         '                </div>\n' +
-                        '                <div>\n' +
+                        '         '       <div>\n' +
                         '                    <img src="http://placehold.it/150x100" alt="..." class="margin">\n' +
                         '                    <img src="http://placehold.it/150x100" alt="..." class="margin">\n' +
                         '                    <img src="http://placehold.it/150x100" alt="..." class="margin">\n' +

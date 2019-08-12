@@ -72,8 +72,8 @@ class AfiliadoController extends Controller
         $categoria_golfista = null;
         $codigo_golfista = null;
 
-        if ($request->get('tipo_usuario') == 3) {
-            if (!$request->has('categoria_golfista') || !$request->has('codigo_golfista')) {
+        if ($request->get('tipo_usuario') == '3') {
+            if ($request->has('categoria_golfista') AND $request->has('codigo_golfista')) {
                 $categoria_golfista = $request->get('categoria_golfista');
                 $codigo_golfista = $request->get('codigo_golfista');
             }
