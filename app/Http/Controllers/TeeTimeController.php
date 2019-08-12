@@ -45,10 +45,10 @@ class TeeTimeController extends Controller
     public function show($id)
     {
         $escenario = Escenario::where(['id' => $id])->with([
-            'programador.grupoJugadoresGolf.jugador1',
-            'programador.grupoJugadoresGolf.jugador2',
-            'programador.grupoJugadoresGolf.jugador3',
-            'programador.grupoJugadoresGolf.jugador4',
+            'programador.jugador1',
+            'programador.jugador2',
+            'programador.jugador3',
+            'programador.jugador4',
         ])->get()->toArray()[0];
         \JavaScript::put([
             'escenario' => $escenario
@@ -101,7 +101,6 @@ class TeeTimeController extends Controller
     }
 
     public function eliminarEscenario(Request $request){
-        ProgramadorEscenario::where(['escenario_id' => $request->get('id')])->delete();
         return response()->json(Escenario::find($request->get('id'))->delete());
     }
 
@@ -113,37 +112,33 @@ class TeeTimeController extends Controller
     public function reservacionesEscenarioFecha($id, $fecha)
     {
         $reservaciones = ProgramadorEscenario::where(['escenario_id' => $id, 'fecha' => $fecha])
-            ->with([
-                'grupoJugadoresGolf' => function ($query) {
-                    $query->with(['jugador1', 'jugador2', 'jugador3', 'jugador4'])->get();
-                }
-            ])->get()->toArray();
+            ->with(['jugador1', 'jugador2', 'jugador3', 'jugador4'])->get()->toArray();
 
         $data = [];
 
         foreach ($reservaciones as $reservacion) {
             $item = $reservacion;
-            if ($reservacion['grupo_jugadores_golf'] != null) {
-                $item['grupo_jugadores_golf']['jugador1'] = [
+            if ($reservacion['estado'] == 'RESERVADO') {
+                $item['jugador1'] = [
                     'id' => $reservacion['grupo_jugadores_golf']['jugador1']['id'],
                     'nombres' => $reservacion['grupo_jugadores_golf']['jugador1']['nombres'],
                     'apellidos' => $reservacion['grupo_jugadores_golf']['jugador1']['apellidos']
                 ];
 
-                $item['grupo_jugadores_golf']['jugador2'] = [
+                $item['jugador2'] = [
                     'id' => $reservacion['grupo_jugadores_golf']['jugador2']['id'],
                     'nombres' => $reservacion['grupo_jugadores_golf']['jugador2']['nombres'],
                     'apellidos' => $reservacion['grupo_jugadores_golf']['jugador2']['apellidos']
                 ];
 
-                $item['grupo_jugadores_golf']['jugador3'] = [
+                $item['jugador3'] = [
                     'id' => $reservacion['grupo_jugadores_golf']['jugador3']['id'],
                     'nombres' => $reservacion['grupo_jugadores_golf']['jugador3']['nombres'],
                     'apellidos' => $reservacion['grupo_jugadores_golf']['jugador3']['apellidos']
                 ];
 
-                if ($item['grupo_jugadores_golf']['jugador4'] != null) {
-                    $item['grupo_jugadores_golf']['jugador4'] = [
+                if ($item['jugador4'] != null) {
+                    $item['jugador4'] = [
                         'id' => $reservacion['grupo_jugadores_golf']['jugador4']['id'],
                         'nombres' => $reservacion['grupo_jugadores_golf']['jugador4']['nombres'],
                         'apellidos' => $reservacion['grupo_jugadores_golf']['jugador4']['apellidos']
@@ -225,4 +220,5 @@ class TeeTimeController extends Controller
                 'data' => []], 200)
             : response()->json(['respuesta' => 'Error', 'status' => 500], 500);
     }
+
 }

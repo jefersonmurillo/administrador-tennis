@@ -158,14 +158,14 @@ function cargarTablaReservaciones(id, fecha) {
 
                 let grupo = '';
 
-                if (res[i].grupo_jugadores_golf !== null) {
-                    grupo += res[i].grupo_jugadores_golf.jugador1.nombres + ' ' + res[i].grupo_jugadores_golf.jugador1.apellidos + ' - ';
-                    grupo += res[i].grupo_jugadores_golf.jugador2.nombres + ' ' + res[i].grupo_jugadores_golf.jugador2.apellidos + ' - ';
-                    if (res[i].grupo_jugadores_golf.jugador4 !== null) {
-                        grupo += res[i].grupo_jugadores_golf.jugador3.nombres + ' ' + res[i].grupo_jugadores_golf.jugador3.apellidos + ' - ';
-                        grupo += res[i].grupo_jugadores_golf.jugador4.nombres + ' ' + res[i].grupo_jugadores_golf.jugador4.apellidos + ' ';
+                if (res[i].jugador1 !== null) {
+                    grupo += res[i].jugador1.nombres + ' ' + res[i].jugador1.apellidos + ' - ';
+                    grupo += res[i].jugador2.nombres + ' ' + res[i].jugador2.apellidos + ' - ';
+                    if (res[i].jugador4 !== null) {
+                        grupo += res[i].jugador3.nombres + ' ' + res[i].jugador3.apellidos + ' - ';
+                        grupo += res[i].jugador4.nombres + ' ' + res[i].jugador4.apellidos + ' ';
                     } else {
-                        grupo += res[i].grupo_jugadores_golf.jugador3.nombres + ' ' + res[i].grupo_jugadores_golf.jugador3.apellidos + '  ';
+                        grupo += res[i].jugador3.nombres + ' ' + res[i].jugador3.apellidos + '  ';
                     }
                 }
 
