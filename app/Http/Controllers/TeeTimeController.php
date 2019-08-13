@@ -119,35 +119,36 @@ class TeeTimeController extends Controller
         foreach ($reservaciones as $reservacion) {
             $item = $reservacion;
             if ($reservacion['estado'] == 'RESERVADO') {
+
                 $item['jugador1'] = [
-                    'id' => $reservacion['grupo_jugadores_golf']['jugador1']['id'],
-                    'nombres' => $reservacion['grupo_jugadores_golf']['jugador1']['nombres'],
-                    'apellidos' => $reservacion['grupo_jugadores_golf']['jugador1']['apellidos']
+                    'id' => $reservacion['jugador1']['id'],
+                    'nombres' => $reservacion['jugador1']['nombres'],
+                    'apellidos' => $reservacion['jugador1']['apellidos']
                 ];
 
                 $item['jugador2'] = [
-                    'id' => $reservacion['grupo_jugadores_golf']['jugador2']['id'],
-                    'nombres' => $reservacion['grupo_jugadores_golf']['jugador2']['nombres'],
-                    'apellidos' => $reservacion['grupo_jugadores_golf']['jugador2']['apellidos']
+                    'id' => $reservacion['jugador2']['id'],
+                    'nombres' => $reservacion['jugador2']['nombres'],
+                    'apellidos' => $reservacion['jugador2']['apellidos']
                 ];
 
                 $item['jugador3'] = [
-                    'id' => $reservacion['grupo_jugadores_golf']['jugador3']['id'],
-                    'nombres' => $reservacion['grupo_jugadores_golf']['jugador3']['nombres'],
-                    'apellidos' => $reservacion['grupo_jugadores_golf']['jugador3']['apellidos']
+                    'id' => $reservacion['jugador3']['id'],
+                    'nombres' => $reservacion['jugador3']['nombres'],
+                    'apellidos' => $reservacion['jugador3']['apellidos']
                 ];
 
                 if ($item['jugador4'] != null) {
                     $item['jugador4'] = [
-                        'id' => $reservacion['grupo_jugadores_golf']['jugador4']['id'],
-                        'nombres' => $reservacion['grupo_jugadores_golf']['jugador4']['nombres'],
-                        'apellidos' => $reservacion['grupo_jugadores_golf']['jugador4']['apellidos']
+                        'id' => $reservacion['jugador4']['id'],
+                        'nombres' => $reservacion['jugador4']['nombres'],
+                        'apellidos' => $reservacion['jugador4']['apellidos']
                     ];
                 }
                 array_push($data, $item);
             } else array_push($data, $item);
         }
-        return response()->json($reservaciones);
+        return response()->json($data);
     }
 
     public function obtenerDiasEstado($id, $estado)

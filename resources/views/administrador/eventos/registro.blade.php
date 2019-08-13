@@ -1,18 +1,13 @@
 @extends('administrador.index')
 
-@section('css')
-
-@endsection
-
 @section('contenido')
     <section class="content">
-        <div id="alerta"></div>
-        <form id="form-registro-instalacion" role="form" enctype="multipart/form-data">
+        <form id="form-registro-evento" role="form" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-12">
                     <div class="box box-warning">
                         <div class="box-header with-border">
-                            <h3 class="box-title">{{ isset($instalacion) ? $instalacion['nombre']: 'Registro de instalación' }}</h3>
+                            <h3 class="box-title">{{ isset($event) ? $event['nombre']: 'Registro de eventos' }}</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body" id="box-body">
@@ -21,16 +16,16 @@
                                 <div class="form-group">
                                     <label>Nombres</label>
                                     <input id="nombre" type="text" name="nombre" class="form-control"
-                                           placeholder="Ingrese el nombre de la instalación..."
-                                           value="{{ isset($instalacion) ? $instalacion['nombres'] : '' }}" required>
+                                           placeholder="Ingrese el nombre del evento..."
+                                           value="{{ isset($evento) ? $evento['nombres'] : '' }}" required>
                                 </div>
                             </div>
 
-                            <div class="col-sm-6">
-                                <div id="selectTipoInstalacion">
+                            <div class="col-sm-3">
+                                <div id="selectTipoEvento">
                                     <div class="form-group">
-                                        <label>Tipo de instalación</label>
-                                        <select id="tipo-instalacion" class="form-control" name="tipo-instalacion" required>
+                                        <label>Tipo de evento</label>
+                                        <select id="tipo-evento" class="form-control" name="tipo-evento" required>
                                             <option value="0">Seleccione</option>
                                             @foreach($tiposEvento as $tipoEvento)
                                                 <option value="{{ $tipoEvento['id'] }}"> {{ $tipoEvento['tipo'] }}</option>
@@ -40,12 +35,41 @@
                                 </div>
                             </div>
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-3">
+                                <div id="selectPrioridad">
+                                    <div class="form-group">
+                                        <label>Prioridad</label>
+                                        <select id="prioridad" class="form-control" name="prioridad" required>
+                                            <option value="0">Seleccione</option>
+                                            @foreach($prioridades as $prioridad)
+                                                <option value="{{ $prioridad['id'] }}"> {{ $prioridad['prioridad'] }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
                                 <div class="form-group">
-                                    <label>Descripciónes</label>
-                                    <textarea class="form-control" rows="3"
-                                              placeholder="Ingrese una breve descripción de la instalación ..."
-                                              id="descripcion"></textarea>
+                                    <label for="recipient-name" class="col-form-label">Fecha de inicio</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input id="fecha_inicio" type="date" class="form-control" data-inputmask="'alias': 'mm/dd/yyyy'" data-mask="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Fecha de fin</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input id="fecha_fin" type="date" class="form-control" data-inputmask="'alias': 'mm/dd/yyyy'" data-mask="">
+                                    </div>
                                 </div>
                             </div>
 
@@ -61,10 +85,20 @@
                                 <div class="form-group">
                                     <div id="btnNuevasImagenes">
                                         <a class="btn btn-app"
-                                           style="padding-top: 1px; padding-bottom: 1px; height: 37px;" onclick="$('#modalPreview').modal().show();">
+                                           style="padding-top: 1px; padding-bottom: 1px; height: 37px;"
+                                           onclick="$('#modalPreview').modal().show();">
                                             <i class="fa fa-play"></i> Vista Previa img destacada
                                         </a>
                                     </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label>Descripciónes</label>
+                                    <textarea class="form-control" rows="3"
+                                              placeholder="Ingrese una breve descripción del evento ..."
+                                              id="descripcion"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -93,10 +127,9 @@
                     </div>
                 </div>
             </div>
-
         </form>
 
-        <div id="imgsInstalacion"></div>
+        <div id="imgsEvento"></div>
 
         <div id="btnActualizar"></div>
 
@@ -133,7 +166,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">CARGUE LAS IMAGENES DE LA INSTALACIÓN</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">CARGUE LAS IMAGENES DEL EVENTO</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -144,14 +177,14 @@
                                 <div class="box">
                                     <div class="box-body">
                                         <p>
-                                            Haga click y selecione las imagenes de las instalaciones, cada uno no mayor
+                                            Haga click y selecione las imagenes del evento, cada una no mayor
                                             a 2.5MB de
                                             tamaño.
                                         </p>
-                                        <form action="../instalaciones/upload" method="post" class="dropzone"
+                                        <form action="../eventos/upload" method="post" class="dropzone"
                                               id="dropzone_example">
                                             {{ csrf_field() }}
-                                            <input id="id_instalacion" type="hidden" name="id_instalación">
+                                            <input id="id_evento" type="hidden" name="id_evento">
                                             <div class="fallback">
                                                 <input accept=".pdf" name="file" type="file" multiple/>
                                             </div>
@@ -170,5 +203,5 @@
 @section('js')
     <link rel="stylesheet" href="{{ asset('plugins/dropzone/dropzone.css') }}">
     <script src="{{ asset('plugins/dropzone/dropzone.js') }}"></script>
-    <script src="{{ asset('js/instalaciones.js') }}"></script>
+    <script src="{{ asset('js/evento.js') }}"></script>
 @endsection

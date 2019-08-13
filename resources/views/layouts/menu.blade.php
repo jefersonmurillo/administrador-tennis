@@ -20,7 +20,7 @@
         </form>
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="active treeview">
+            <li class="treeview">
                 <a href="#">
                     <i class="fa fa-dashboard"></i> <span>Usuarios</span>
                     <span class="pull-right-container">
@@ -28,9 +28,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="{{ route('afiliados.index') }}"><i class="fa fa-circle-o"></i> Afiliados</a>
+                    <li class=""><a href="{{ route('afiliados.index') }}"><i class="fa fa-circle-o"></i> Afiliados</a>
                     </li>
-                    <li><a href="index2.html"><i class="fa fa-circle-o"></i> Solicitudes</a></li>
                 </ul>
             </li>
 
@@ -43,11 +42,11 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{ route('instalaciones.index') }}"><i class="fa fa-circle-o"></i>Listado de instalaciones</a></li>
-                    <li class="active"><a href="{{ route('disciplinas.index') }}"><i class="fa fa-circle-o"></i>Disciplinas</a></li>
+                    <li class=""><a href="{{ route('disciplinas.index') }}"><i class="fa fa-circle-o"></i>Disciplinas</a></li>
                 </ul>
             </li>
 
-            <li class="active treeview">
+            <li class="treeview">
                 <a href="">
                     <i class="fa fa-th"></i> <span>Eventos</span>
                     <span class="pull-right-container">
@@ -59,7 +58,7 @@
                 </ul>
             </li>
 
-            <li class="active treeview">
+            <li class="treeview">
                 <a href="#">
                     <i class="fa fa-th"></i> <span>Tee-Time</span>
                     <span class="pull-right-container">

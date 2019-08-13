@@ -61,7 +61,8 @@ class InstalacionController extends Controller
         $info = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $img));
 
         $imgp = Image::make($info);
-        $imgp->save(public_path('storage/instalaciones/' . $request->get('nombre') . '.jpg'));
+        $time = time();
+        $imgp->save(public_path('storage/instalaciones/' . $time . '.jpg'));
 
         $nombres = $request->get('nombre');
         $tipo = $request->get('tipo');
@@ -71,7 +72,7 @@ class InstalacionController extends Controller
             'nombre' => $nombres,
             'tipo_instalacion_id' => $tipo,
             'descripcion' => $descripcion,
-            'imagen_destacada' => 'storage/instalaciones/' . $request->input('nombre') . '.jpg'
+            'imagen_destacada' => 'storage/instalaciones/' . $time . '.jpg'
         ]);
 
         return $instalacion->save() ?
@@ -177,7 +178,7 @@ class InstalacionController extends Controller
 
         $file = $request->file('file');
         $time = time();
-        $url = $file->storeAs('public/instalaciones', $time . '.' . $file->extension());
+        $file->storeAs('public/instalaciones', $time . '.' . $file->extension());
 
         $instalacion_imagen = new ImagenesInstalacion(['instalacion_id' => $id_instalacion, 'url' => 'storage/instalaciones/' . $time . '.' . $file->extension()]);
 

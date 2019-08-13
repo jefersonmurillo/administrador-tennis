@@ -20,8 +20,18 @@ Route::group(['prefix' => 'instalaciones'], function(){
 });
 
 Route::group(['prefix' => 'eventos'], function(){
+    Route::post('/', 'EventoController@store');
     Route::get('/', 'EventoController@index')->name('eventos.index');
     Route::get('shows', 'EventoController@shows');
+    Route::get('create', 'EventoController@create');
+
+    Route::put('{id}', 'EventoController@update');
+    Route::delete('{id}', 'EventoController@destroy');
+
+    Route::get('{id}', 'EventoController@show');
+    Route::get('images/{id}', 'EventoController@obtenerImagenesInstalacion');
+    Route::delete('images/{id}', 'EventoController@eliminarImagenEvento');
+    Route::post('upload', 'EventoController@cargarImagenesEvento');
 });
 
 

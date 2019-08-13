@@ -95,7 +95,7 @@ function cargarTablaReservaciones(id, fecha) {
         url: '/tee-time/reservacionesEscenarioFecha/' + id + '/' + fecha,
         data: {'_token': $("input:hidden[name='_token']").val()},
         success: function (res) {
-
+            console.log(res);
             $('#body-table-reservaciones').empty().append('' +
                 '<table id="table-reservaciones" class="table table-bordered table-striped">\n' +
                 '    <thead>\n' +
@@ -157,8 +157,8 @@ function cargarTablaReservaciones(id, fecha) {
                     estado = '<span class="badge bg-red;" style="background-color: #f39c12 !important;">RESERVADO</span>';
 
                 let grupo = '';
-
-                if (res[i].jugador1 !== null) {
+                console.log(res[i]);
+                if (res[i].jugador1 != null) {
                     grupo += res[i].jugador1.nombres + ' ' + res[i].jugador1.apellidos + ' - ';
                     grupo += res[i].jugador2.nombres + ' ' + res[i].jugador2.apellidos + ' - ';
                     if (res[i].jugador4 !== null) {
