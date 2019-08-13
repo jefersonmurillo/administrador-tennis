@@ -69,10 +69,30 @@
                 </ul>
             </li>
 
-            <li class="header">LABELS</li>
-            <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+            <li>
+                <a href="{{ route('pqrs.index') }}">
+                    <i class="fa fa-th"></i> <span>PQRS</span>
+                    <span class="pull-right-container">
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ route('pqrs.index') }}">
+                    <i class="fa fa-th"></i> <span>Sugerencias del Chef</span>
+                    <span class="pull-right-container">
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ route('pqrs.index') }}">
+                    <i class="fa fa-th"></i> <span>Sabor Gourmet</span>
+                    <span class="pull-right-container">
+                    </span>
+                </a>
+            </li>
+
         </ul>
     </section>
 </aside>

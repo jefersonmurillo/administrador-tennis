@@ -19,6 +19,11 @@ Route::group(['prefix' => 'instalaciones'], function(){
     Route::delete('images/{id}', 'InstalacionController@eliminarImagenInstalacion');
 });
 
+
+Route::group(['prefix' => 'pqrs'], function(){
+    Route::get('/', 'OtrosController@indexPQRS')->name('pqrs.index');
+});
+
 Route::group(['prefix' => 'eventos'], function(){
     Route::post('/', 'EventoController@store');
     Route::get('/', 'EventoController@index')->name('eventos.index');

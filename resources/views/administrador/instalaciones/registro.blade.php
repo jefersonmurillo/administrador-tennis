@@ -32,8 +32,8 @@
                                         <label>Tipo de instalación</label>
                                         <select id="tipo-instalacion" class="form-control" name="tipo-instalacion" required>
                                             <option value="0">Seleccione</option>
-                                            @foreach($tiposEvento as $tipoEvento)
-                                                <option value="{{ $tipoEvento['id'] }}"> {{ $tipoEvento['tipo'] }}</option>
+                                            @foreach($tiposInstalacion as $tipoInstalacion)
+                                                <option value="{{ $tipoInstalacion['id'] }}"> {{ $tipoInstalacion['tipo'] }}</option>
                                             @endforeach
                                         </select>
                                     </div>

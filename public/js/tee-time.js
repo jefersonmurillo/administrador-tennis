@@ -77,7 +77,7 @@ function cargarModalEscenario(registrar = true, id = undefined, nombre = undefin
     let disciplinas = [];
     $.ajax({
         type: 'get',
-        url: 'http://localhost:8001/api/v1/disciplinas',
+        url: 'http://localhost:8000/api/v1/disciplinas',
         success: function (res) {
             disciplinas = res.data;
             let html = '' +
@@ -94,6 +94,7 @@ function cargarModalEscenario(registrar = true, id = undefined, nombre = undefin
             html += '' +
                 '    </select>\n';
 
+            $('#nombre').val('');
             if (!registrar) {
                 $('#tetleFormEscenario').empty().append('Actualizar Escenario');
                 $('#BotonFormRegistro').val('Actualizar');

@@ -68,18 +68,6 @@
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{ asset('template/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-<!-- Morris.js charts -->
-{{--<script src="{{ asset('template/bower_components/raphael/raphael.min.js') }}"></script>--}}
-{{--<script src="{{ asset('template/bower_components/morris.js/morris.min.js') }}"></script>--}}
-<!-- Sparkline -->
-{{--<script src="{{ asset('template/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>--}}
-<!-- jvectormap -->
-{{--<script src="{{ asset('template/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
-<script src="{{ asset('template/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
-<!-- jQuery Knob Chart -->
-<script src="{{ asset('template/bower_components/jquery-knob/dist/jquery.knob.min.js') }}"></script>--}}
-<!-- daterangepicker -->
-
 <script src="{{ asset('template/plugins/input-mask/jquery.inputmask.js') }}"></script>
 <script src="{{ asset('template/plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
 <script src="{{ asset('template/plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
