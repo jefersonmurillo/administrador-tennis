@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ead46319-ecac-4234-884e-5bd86aee51c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/fondosesion.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/logoclubtennis.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/sabor.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/sugerencia.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OtrosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OtrosController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Pqrs.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Pqrs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/pqrs.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pqrs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/programador.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/programador.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/administrador/afiliados/registro.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/administrador/afiliados/registro.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/administrador/pqrs/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/administrador/pqrs/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/administrador/sabor/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/administrador/sabor/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/administrador/sugerencias/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/administrador/sugerencias/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,32 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/menu.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="677">
-              <caret line="89" column="71" selection-start-line="89" selection-start-column="71" selection-end-line="89" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Pqrs.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="80" selection-start-line="10" selection-start-column="4" selection-end-line="24" selection-end-column="80" />
-              <folding>
-                <element signature="e#30#43#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/SugerenciaSabor.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-              <folding>
-                <element signature="e#30#69#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -88,6 +49,15 @@
                 <element signature="e#1324#1344#0#HTML" expanded="true" />
                 <element signature="e#2364#2384#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/header.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -123,7 +93,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OtrosController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="660">
@@ -131,6 +101,15 @@
               <folding>
                 <element signature="e#40#60#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="37" column="49" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -207,7 +186,6 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PQRSController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/header.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
         <option value="$PROJECT_DIR$/app/Models/Pqrs.php" />
         <option value="$PROJECT_DIR$/public/js/programador.js" />
@@ -222,9 +200,10 @@
         <option value="$PROJECT_DIR$/resources/views/administrador/sabor/index.blade.php" />
         <option value="$PROJECT_DIR$/public/js/sugerencia.js" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" />
         <option value="$PROJECT_DIR$/public/js/sabor.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/OtrosController.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/header.blade.php" />
       </list>
     </option>
   </component>
@@ -561,12 +540,12 @@
       <workItem from="1565633398471" duration="1334000" />
       <workItem from="1565651521015" duration="24309000" />
       <workItem from="1565717180807" duration="4339000" />
-      <workItem from="1565791598145" duration="13636000" />
+      <workItem from="1565791598145" duration="14370000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63274000" />
+    <option name="totallyTimeSpent" value="64008000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
@@ -737,13 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthController.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -777,16 +749,6 @@
           <caret line="98" selection-start-line="98" selection-end-line="98" />
           <folding>
             <element signature="e#40#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="37" column="49" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -948,13 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/menu.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="677">
-          <caret line="89" column="71" selection-start-line="89" selection-start-column="71" selection-end-line="89" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -976,6 +931,27 @@
           <folding>
             <element signature="e#40#60#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/menu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="37" column="49" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
         </state>
       </provider>
     </entry>
