@@ -22,7 +22,7 @@ class Pqrs extends Model
     /**
      * @var array
      */
-    protected $fillable = ['id', 'users_id', 'asunto', 'mensage'];
+    protected $fillable = ['id', 'users_id', 'asunto', 'mensage', 'created_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

@@ -20,9 +20,14 @@ Route::group(['prefix' => 'instalaciones'], function(){
     Route::delete('images/{id}', 'InstalacionController@eliminarImagenInstalacion');
 });
 
+Route::get('sugerencias-chef', 'OtrosController@indexSugerencia')->name('sugerencias.index');
+Route::get('sabor-gourmet', 'OtrosController@indexSabor')->name('sabor.index');
+Route::post('sugerencias-chef/cargarSugerencia', 'OtrosController@cargarSugerencia');
+Route::post('sabor-gourmet/cargarSabor', 'OtrosController@cargarSabor');
 
 Route::group(['prefix' => 'pqrs', 'middleware' => ['auth']], function(){
     Route::get('/', 'OtrosController@indexPQRS')->name('pqrs.index');
+    Route::get('obtenerMensajes', 'OtrosController@obtenerMensajesPqrs');
 });
 
 Route::group(['prefix' => 'eventos', 'middleware' => ['auth']], function(){

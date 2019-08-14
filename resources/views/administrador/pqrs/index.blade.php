@@ -30,36 +30,62 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
-                            <td><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
-                            <td></td>
-                            <td class="mailbox-date">5 mins ago</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a>
-                            </td>
-                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
-                            <td><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem... </td>
-                            <td></td>
-                            <td class="mailbox-date">28 mins ago</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a>
-                            </td>
-                            <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
-                            <td><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem... </td>
-                            <td></td>
-                            <td class="mailbox-date">11 hours ago</td>
-                        </tr>
                         </tbody>
                     </table>
                     <!-- /.table -->
                     <!-- /.mail-box-messages -->
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalMensaje" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document" style="width: 55%">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div><h5 class="modal-title" id="exampleModalLabel"></h5></div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Nombres:</label>
+                                    <input type="text" class="form-control" id="nombres" disabled="">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Codigo Afiliado:</label>
+                                    <input type="text" class="form-control" id="codigo" disabled="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Asunto:</label>
+                                    <input type="text" class="form-control" id="asunto" disabled="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Mensaje:</label>
+                                    <textarea class="form-control" rows="3" placeholder="Enter ..." disabled="" id="mensaje"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
                 </div>
             </div>
         </div>

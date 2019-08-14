@@ -18,15 +18,17 @@
     <link rel="stylesheet" href="{{ asset('template/plugins/iCheck/square/blue.css') }}">
 
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-image: url({{ asset('images/fondosesion.jpg') }});">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ route('index') }}"><b>Club</b>Tennis</a>
+        <a href="{{ route('index') }}">
+            <center>
+                <img src="{{ asset('images/logoclubtennis.png') }}" alt="" width="150" height="150">
+            </center>
+        </a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Inicio de sesión</p>
-
         <form action="{{ route('login') }}" method="post">
             @csrf
             <div class="form-group has-feedback">
@@ -53,7 +55,7 @@
             </div>
         </form>
 
-        <a href="{{ route('password.reset') }}">Olvidé mi contraseña</a><br>
+        {{--<a href="{{ route('password.reset') }}">Olvidé mi contraseña</a><br>--}}
 
     </div>
     <!-- /.login-box-body -->

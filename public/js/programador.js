@@ -37,7 +37,7 @@ function cargarTablaDiasEscenario() {
 
             let t = $('#table-fechas').DataTable({
                 "destroy": true,
-                "lengthMenu": [[5, 10, 15, -1], [5, 10, 15, "Todos"]],
+                "lengthMenu": [[10, 20, 30, -1], [10, 20, 30, "Todos"]],
                 language: {
                     "decimal": "",
                     "emptyTable": "No hay información",

@@ -78,7 +78,7 @@
             </li>
 
             <li>
-                <a href="{{ route('pqrs.index') }}">
+                <a href="{{ route('sugerencias.index') }}">
                     <i class="fa fa-th"></i> <span>Sugerencias del Chef</span>
                     <span class="pull-right-container">
                     </span>
@@ -86,7 +86,7 @@
             </li>
 
             <li>
-                <a href="{{ route('pqrs.index') }}">
+                <a href="{{ route('sabor.index') }}">
                     <i class="fa fa-th"></i> <span>Sabor Gourmet</span>
                     <span class="pull-right-container">
                     </span>

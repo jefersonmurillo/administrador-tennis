@@ -77,8 +77,8 @@
                                         <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
                                         </div>
-                                        <input id="fecha-nacimiento" name="fecha-nacimiento" type="text"
-                                               class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask
+                                        <input id="fecha-nacimiento" name="fecha-nacimiento" type="date"
+                                               class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask=""
                                                value="{{ isset($afiliado) ? $afiliado['fecha_naci'] : ''}}" required>
                                     </div>
                                 </div>
