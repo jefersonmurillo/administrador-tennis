@@ -4,14 +4,15 @@ Auth::routes(['verify' => true]);
 Auth::routes(['register' => false]);
 Auth::routes();
 
-Route::get('/', 'InstalacionController@index');
+Route::get('/', 'InstalacionController@index')->middleware('auth')->name('index');
 
-Route::get('home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->middleware('auth')->name('home');
 Route::post('login', 'Auth\LoginController@login')->name('login');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::resource('afiliados', 'AfiliadoController');
-Route::resource('disciplinas', 'DisciplinaController');
-Route::resource('instalaciones', 'InstalacionController');
+Route::resource('afiliados', 'AfiliadoController')->middleware('auth');
+Route::resource('disciplinas', 'DisciplinaController')->middleware('auth');
+Route::resource('instalaciones', 'InstalacionController')->middleware('auth');
 
 Route::group(['prefix' => 'instalaciones'], function(){
     Route::post('upload', 'InstalacionController@cargarImagenesInstalacion');
@@ -20,11 +21,11 @@ Route::group(['prefix' => 'instalaciones'], function(){
 });
 
 
-Route::group(['prefix' => 'pqrs'], function(){
+Route::group(['prefix' => 'pqrs', 'middleware' => ['auth']], function(){
     Route::get('/', 'OtrosController@indexPQRS')->name('pqrs.index');
 });
 
-Route::group(['prefix' => 'eventos'], function(){
+Route::group(['prefix' => 'eventos', 'middleware' => ['auth']], function(){
     Route::post('/', 'EventoController@store');
     Route::get('/', 'EventoController@index')->name('eventos.index');
     Route::get('shows', 'EventoController@shows');
@@ -40,7 +41,7 @@ Route::group(['prefix' => 'eventos'], function(){
 });
 
 
-Route::group(['prefix' => 'tee-time'], function(){
+Route::group(['prefix' => 'tee-time', 'middleware' => ['auth']], function(){
     Route::get('/', function(){return view('administrador.tee-time.index');})->name('tee-time.index');
     Route::get('show/{id}', 'TeeTimeController@show')->name('tee-time.show');
 

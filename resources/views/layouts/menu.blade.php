@@ -33,7 +33,7 @@
                 </ul>
             </li>
 
-            <li class="active treeview">
+            <li class="treeview">
                 <a href="">
                     <i class="fa fa-th"></i> <span>Instalaciones</span>
                     <span class="pull-right-container">
