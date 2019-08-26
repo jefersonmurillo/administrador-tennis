@@ -7,7 +7,7 @@
                 <div class="box">
                     <div class="box-body">
                         <h3 style="display: inline;">Listado de instalaciones</h3>
-                        <button type="button" class="btn bg-olive btn-flat margin" style="float: right;margin-top: 0px; margin-bottom: 0px;" onclick="location.href='http://localhost:8001/instalaciones/create'">
+                        <button type="button" class="btn bg-olive btn-flat margin" style="float: right;margin-top: 0px; margin-bottom: 0px;" onclick="location.href='https://appadministrador.tennisgolfclub.com.co/instalaciones/create'">
                             Nueva Instalación
                         </button>
                     </div>

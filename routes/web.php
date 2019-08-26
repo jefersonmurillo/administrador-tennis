@@ -20,10 +20,16 @@ Route::group(['prefix' => 'instalaciones'], function(){
     Route::delete('images/{id}', 'InstalacionController@eliminarImagenInstalacion');
 });
 
-Route::get('sugerencias-chef', 'OtrosController@indexSugerencia')->name('sugerencias.index');
-Route::get('sabor-gourmet', 'OtrosController@indexSabor')->name('sabor.index');
-Route::post('sugerencias-chef/cargarSugerencia', 'OtrosController@cargarSugerencia');
-Route::post('sabor-gourmet/cargarSabor', 'OtrosController@cargarSabor');
+
+Route::group(['prefix' => 'sugerencias-chef', 'middleware' => ['auth']], function () {
+    Route::get('/', 'OtrosController@indexSugerencia')->name('sugerencias.index');
+    Route::post('cargarSugerencia', 'OtrosController@cargarSugerencia');
+});
+
+Route::group(['prefix' => 'sabor-gourmet', 'middleware' => ['auth']], function () {
+    Route::get('/', 'OtrosController@indexSabor')->name('sabor.index');
+    Route::post('cargarSabor', 'OtrosController@cargarSabor');
+});
 
 Route::group(['prefix' => 'pqrs', 'middleware' => ['auth']], function(){
     Route::get('/', 'OtrosController@indexPQRS')->name('pqrs.index');

@@ -117,7 +117,7 @@ function llenarFormulario() {
     $('#descripcion').val(evento.descripcion);
     $('#fecha_inicio').val(evento.fecha_inicio);
     $('#fecha_fin').val(evento.fecha_fin);
-    $('#output').attr('src', 'http://localhost:8001/' + evento.imagen_destacada);
+    $('#output').attr('src', 'https://appadministrador.tennisgolfclub.com.co/' + evento.imagen_destacada);
     cargarSelectTipoEvento();
     cargarSelectPrioridades();
     cargarImagenesInstalacion();
@@ -289,7 +289,7 @@ function cargarImagenesInstalacion() {
                         '                opacity: .6;\n' +
                         '                font-size: 30px;" onclick="eliminarImagenEvento(' + res[i]['id'] + ')">×\n' +
                         '        </button>\n' +
-                        '        <img src="http://localhost:8001/' + res[i]['url'] + '" alt=""\n' +
+                        '        <img src="https://appadministrador.tennisgolfclub.com.co/' + res[i]['url'] + '" alt=""\n' +
                         '             style="width: 100%; height: 100%;">\n' +
                         '    </div>\n' +
                         '</div>\n';

@@ -57,7 +57,7 @@ function cargarEventos() {
                         '                opacity: .6;\n' +
                         '                font-size: 30px;">×\n' +
                         '        </button>\n' +
-                        '         <img src="http://localhost:8001/' + evento[j].imagen_destacada + '" width="150" alt="Imagen Destacada" class="margin">' +
+                        '         <img src="https://appadministrador.tennisgolfclub.com.co/' + evento[j].imagen_destacada + '" width="150" alt="Imagen Destacada" class="margin">' +
                         '    </div>\n' +
                         '</div>\n';
 
@@ -75,7 +75,7 @@ function cargarEventos() {
                             '                opacity: .6;\n' +
                             '                font-size: 30px;" onclick="eliminarImagenEvento(' + evento[j].imagenes_eventos[k].id + ')">×\n' +
                             '        </button>\n' +
-                            '         <img src="http://localhost:8001/' + evento[j].imagenes_eventos[k].url + '" width="150" alt="..." class="margin">' +
+                            '         <img src="https://appadministrador.tennisgolfclub.com.co/' + evento[j].imagenes_eventos[k].url + '" width="150" alt="..." class="margin">' +
                             '    </div>\n' +
                             '</div>\n';
                     }
@@ -85,7 +85,7 @@ function cargarEventos() {
                     html += '                ' +
                         '                </div>' +
                         '            <div class="timeline-footer">\n' +
-                        '                <a href="http://localhost:8001/eventos/' + evento[j].id + '" class="btn btn-primary btn-xs">Modificar</a>\n' +
+                        '                <a href="https://appadministrador.tennisgolfclub.com.co/' + evento[j].id + '" class="btn btn-primary btn-xs">Modificar</a>\n' +
                         '                <a class="btn btn-danger btn-xs" onclick="eliminarEvento(' + evento[j].id + ')">Aliminar</a>\n' +
                         '            </div>\n' +
                         '        </div>\n' +

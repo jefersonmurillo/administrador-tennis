@@ -53,7 +53,7 @@
                     <div class="box-body" id="body-table-fechas">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <img src="http://localhost:8001/{{ count($sugerencia)>0? $sugerencia['url'] : '#' }}"
+                                <img src="https://appadministrador.tennisgolfclub.com.co/{{ count($sugerencia)>0? $sugerencia['url'] : '#' }}"
                                      alt="" style="width: 100%;">
                             </div>
                         </div>

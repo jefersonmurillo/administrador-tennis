@@ -77,7 +77,7 @@ function cargarModalEscenario(registrar = true, id = undefined, nombre = undefin
     let disciplinas = [];
     $.ajax({
         type: 'get',
-        url: 'http://localhost:8000/api/v1/disciplinas',
+        url: 'https://appapi.tennisgolfclub.com.co/api/v1/disciplinas',
         success: function (res) {
             disciplinas = res.data;
             let html = '' +
@@ -128,7 +128,7 @@ function cargarEscenarios() {
                     '        <div class="widget-user-header bg-green" style="padding: 5px !important;">\n' +
                     '            <a href="#" onclick="eliminarEscenario(\''+res[i].id+'\')" style="color: white; margin-right: 5px;"><i class="fa fa-remove" style="font-size: 20px;"></i></a>\n' +
                     '            <a href="#" onclick="cargarModalEscenario(false, \''+res[i].id+'\', \''+res[i].nombre+'\' , \''+res[i].disciplina_id+'\')" style="color: white; margin-right: 5px;"><i class="fa fa-pencil-square-o" style="font-size: 20px;"></i></a>\n' +
-                    '            <a href="http://localhost:8001/tee-time/show/'+res[i].id+'" style="color: white; margin-right: 5px;"><i class="fa fa-tripadvisor" style="font-size: 20px;"></i></a>\n' +
+                    '            <a href="https://appadministrador.tennisgolfclub.com.co/tee-time/show/'+res[i].id+'" style="color: white; margin-right: 5px;"><i class="fa fa-tripadvisor" style="font-size: 20px;"></i></a>\n' +
                     '\n' +
                     '            <a href="" style="text-decoration: none; color: white"><h3 class="widget-user-username" onclick="">' + res[i].nombre + '</h3></a>\n' +
                     '            <a href="" style="text-decoration: none; color: white"><h5 class="widget-user-desc" onclick="">Disciplina: ' + res[i].disciplina.nombre + '</h5></a>\n' +

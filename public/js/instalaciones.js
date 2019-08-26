@@ -131,7 +131,7 @@ function cargarImagenesInstalacion() {
                         '                opacity: .6;\n' +
                         '                font-size: 30px;" onclick="eliminarImagenInstalacion(' + res[i]['id'] + ')">×\n' +
                         '        </button>\n' +
-                        '        <img src="http://localhost:8001/' + res[i]['url'] + '" alt=""\n' +
+                        '        <img src="https://appadministrador.tennisgolfclub.com.co/' + res[i]['url'] + '" alt=""\n' +
                         '             style="width: 100%; height: 100%;">\n' +
                         '    </div>\n' +
                         '</div>\n';
@@ -308,7 +308,7 @@ function llenarFormulario() {
     $('#selectTipoInstalacion').empty().append(html);
     $('#id_instalacion').val(instalacion.id);
     $('#descripcion').val(instalacion.descripcion);
-    $('#output').attr('src', 'http://localhost:8001/'+instalacion.imagen_destacada);
+    $('#output').attr('src', 'https://appadministrador.tennisgolfclub.com.co/'+instalacion.imagen_destacada);
     cargarImagenesInstalacion();
     mostarBotonNuevasImagenes();
     mostarBotonActualizar();
