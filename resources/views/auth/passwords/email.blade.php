@@ -17,6 +17,9 @@
     <!-- iCheck -->
     <link rel="stylesheet" href="{{ asset('template/plugins/iCheck/square/blue.css') }}">
 
+    <script src="{{ asset('plugins/sweetalert2/dist/sweetalert2.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/dist/sweetalert2.min.css') }}">
+
 </head>
 <body class="hold-transition login-page" style="background-image: url({{ asset('images/fondosesion.jpg') }});">
 <div class="login-box">
@@ -44,11 +47,6 @@
                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' invalido' : '' }}"
                        name="email" value="{{ old('email') }}" placeholder="Ingresa el correo" required>
 
-                @if ($errors->has('email'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('email') }}</strong>
-                    </span>
-                @endif
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="row">
@@ -78,6 +76,22 @@
 <script src="{{ asset('template/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <!-- iCheck -->
 <script src="{{ asset('template/plugins/iCheck/icheck.min.js') }}"></script>
+
+<script !src="">
+    @if($errors->has('email'))
+        Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Este email no corresponde a una cuenta registrada!',
+        });
+    @else
+        Swal.fire(
+            'Operación Exitosa!',
+            'Te hemos enviado un email para recuperación de contraseña',
+            'success'
+        );
+    @endif
+</script>
 </body>
 </html>
 

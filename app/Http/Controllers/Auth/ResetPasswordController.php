@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ResetPasswordController extends Controller
 {
@@ -32,8 +35,28 @@ class ResetPasswordController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    /*public function __construct()
     {
         $this->middleware('guest');
+    }*/
+
+    /**
+     * @param Request $request
+     * @return mixed
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function cambiarContrasenia(Request $request){
+
+        if($request->input('password') != $request->input('password_confirmation'))
+            return redirect()->back()->withErrors(['password' => 'Diferentes']);
+
+        $usuario = User::where(['email' => $request->input('email')]);
+
+        if(count($usuario->get()->toArray()) == 0)
+            return redirect()->back()->withErrors(['email' => 'No existe'] );
+
+        if($usuario->update(['password' =>  Hash::make($request->input('password'))]))
+            return redirect()->back()->withErrors(['status' => 'error'] );
+        else return redirect()->back()->withErrors(['status' => 'ok']);
     }
 }

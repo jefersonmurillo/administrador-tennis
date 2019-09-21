@@ -1,69 +1,3 @@
-{{--@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('password.update') }}">
-                        @csrf
-
-                        <input type="hidden" name="token" value="{{ $token }}">
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $email ?? old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Reset Password') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection--}}
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,6 +17,9 @@
     <!-- iCheck -->
     <link rel="stylesheet" href="{{ asset('template/plugins/iCheck/square/blue.css') }}">
 
+    <script src="{{ asset('plugins/sweetalert2/dist/sweetalert2.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/dist/sweetalert2.min.css') }}">
+
 </head>
 <body class="hold-transition login-page" style="background-image: url({{ asset('images/fondosesion.jpg') }});">
 <div class="login-box">
@@ -95,7 +32,7 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <form method="POST" action="{{ route('password.update') }}">
+        <form method="POST" action="{{ route('password.change') }}">
             @csrf
             <input type="hidden" name="token" value="{{ $token }}">
             <div class="row">
@@ -108,24 +45,15 @@
                 <!-- /.col -->
             </div>
             <div class="form-group has-feedback">
+
                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $email ?? old('email') }}" required autofocus>
 
-                @if ($errors->has('email'))
-                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                @endif
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
 
             <div class="form-group has-feedback">
                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Nueva contraseña" name="password" required>
 
-                @if ($errors->has('password'))
-                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                @endif
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
 
@@ -163,6 +91,39 @@
 <script src="{{ asset('template/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <!-- iCheck -->
 <script src="{{ asset('template/plugins/iCheck/icheck.min.js') }}"></script>
+
+<script>
+    @if($errors->has('password'))
+        Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Las contraseñas no son iguales',
+        });
+    @endif
+
+    @if($errors->has('email'))
+        Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Este email no corresponde a una cuenta registrada!',
+        });
+    @endif
+
+    @if($errors->has('status') AND $errors->get('status')[0] == 'error')
+        Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Ocurrio un error al cambiar la contraseña, Por favor intentalo nuevamente',
+        });
+    @elseif($errors->has('status') AND $errors->get('status')[0] == 'ok')
+        Swal.fire(
+            'Operación Exitosa!',
+            'Inforamación guardada.',
+            'success'
+        );
+    @endif
+
+</script>
 </body>
 </html>
 

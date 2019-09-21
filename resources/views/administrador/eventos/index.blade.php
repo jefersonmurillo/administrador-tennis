@@ -14,6 +14,20 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-body">
+                        <div class="callout callout-info">
+                            <h4>Para tener en cuenta</h4>
+                            <p>La primera imagen que aparece de izquierda a derecha corresponde a la imagen establecída como destacada para la app movil</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="row">
             <div id="eventos"></div>
         </div>

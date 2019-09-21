@@ -17,6 +17,9 @@
     <!-- iCheck -->
     <link rel="stylesheet" href="{{ asset('template/plugins/iCheck/square/blue.css') }}">
 
+    <script src="{{ asset('plugins/sweetalert2/dist/sweetalert2.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/dist/sweetalert2.min.css') }}">
+
 </head>
 <body class="hold-transition login-page" style="background-image: url({{ asset('images/fondosesion.jpg') }});">
 <div class="login-box">
@@ -68,5 +71,15 @@
 <script src="{{ asset('template/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <!-- iCheck -->
 <script src="{{ asset('template/plugins/iCheck/icheck.min.js') }}"></script>
+
+<script !src="">
+    @if($errors->has('email'))
+        Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Email o contraseña invalidos!',
+        });
+    @endif
+</script>
 </body>
 </html>

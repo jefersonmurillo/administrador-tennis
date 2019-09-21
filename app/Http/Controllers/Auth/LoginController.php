@@ -42,10 +42,12 @@ class LoginController extends Controller
     {
         $credentials = $this->validate(request(), [
             'email' => 'email|required|string',
-            'password' => 'required|string'
-
+            'password' => 'required|string',
+            
         ]);
 
+        $credentials['tipo_usuario_id'] = 2;
+            
         if (Auth::guard('web')->attempt($credentials))
         {
             return redirect()->route('index');

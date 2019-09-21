@@ -9,6 +9,7 @@ Route::get('/', 'InstalacionController@index')->middleware('auth')->name('index'
 Route::get('home', 'HomeController@index')->middleware('auth')->name('home');
 Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+Route::post('password/resetPassword', 'Auth\ResetPasswordController@cambiarContrasenia')->name('password.change');
 
 Route::resource('afiliados', 'AfiliadoController')->middleware('auth');
 Route::resource('disciplinas', 'DisciplinaController')->middleware('auth');

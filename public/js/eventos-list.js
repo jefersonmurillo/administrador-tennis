@@ -52,10 +52,6 @@ function cargarEventos() {
                         '                border-color: #ffffff00;\n' +
                         '                border-radius: 0px;\n' +
                         '                color: #31708f00 !important; padding: 0px !important;">\n' +
-                        '        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"\n' +
-                        '                style="color: #000;\n' +
-                        '                opacity: .6;\n' +
-                        '                font-size: 30px;">×\n' +
                         '        </button>\n' +
                         '         <img src="https://appadministrador.tennisgolfclub.com.co/' + evento[j].imagen_destacada + '" width="150" alt="Imagen Destacada" class="margin">' +
                         '    </div>\n' +

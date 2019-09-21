@@ -17,6 +17,11 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">{{ isset($afiliado) ? $afiliado['nombres'].' '.$afiliado['apellidos']: 'Registro de afiliados' }}</h3>
                         </div>
+                        <div class="callout callout-info">
+                            <h4>Para tener en cuenta</h4>
+                            <p>La contraseña asignada por defecto es una concatenación de las iniciales CC seguido del numero de documento. Ej: CC1234567890.</p>
+                            <p>Desde está vista se puede realizar lo correspondiente al HANDICAP</p>
+                        </div>
                         <!-- /.box-header -->
                         <div class="box-body" id="box-body">
 
