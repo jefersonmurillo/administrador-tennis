@@ -34,18 +34,18 @@ class ProgramadorEscenario extends Model
     }
 
     public function jugador1(){
-        return $this->belongsTo(User::class, 'jugador1', 'codigo_afiliado');
+        return $this->belongsTo(User::class, 'jugador1', 'codigo_golfista');
     }
 
     public function jugador2(){
-        return $this->belongsTo(User::class, 'jugador2', 'codigo_afiliado');
+        return $this->belongsTo(User::class, 'jugador2', 'codigo_golfista');
     }
 
     public function jugador3(){
-        return $this->belongsTo(User::class, 'jugador3', 'codigo_afiliado');
+        return $this->belongsTo(User::class, 'jugador3', 'codigo_golfista');
     }
 
     public function jugador4(){
-        return $this->belongsTo(User::class, 'jugador4', 'codigo_afiliado');
+        return $this->belongsTo(User::class, 'jugador4', 'codigo_golfista');
     }
 }
